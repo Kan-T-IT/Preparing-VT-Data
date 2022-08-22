@@ -20,16 +20,30 @@ mkdir tiles
 ```
 
 
-docker run --entrypoint tippecanoe -v $PWD:/tippecanoe morlov/tippecanoe:latest -o tippecanoe/tiles/predio.mbtiles  -l default -Z10 -z22 -pk --drop-fraction-as-needed tippecanoe/geojson/4326_predio.geojson
 
+Upload / download of GEOjson, for example:
 
--rwxr-xr-x 1 root root 5.1G Jun 28 17:30 4326_construccion.geojson
-
-
-
-
-docker run --entrypoint tippecanoe -v $PWD:/tippecanoe morlov/tippecanoe:latest -o tippecanoe/tiles/construccion.mbtiles  -l default -Z10 -z22 -pk --drop-fraction-as-needed tippecanoe/geojson/4326_construccion.geojson
-
-
+```
+cd geojson
 
 wget https://cdn.buenosaires.gob.ar/datosabiertos/datasets/secretaria-de-desarrollo-urbano/tejido-urbano/tejido.geojson
+
+cd ..
+```
+
+
+Execute process trasnform of GEOjson to MBtiles
+
+```
+docker run --entrypoint tippecanoe -v $PWD:/tippecanoe morlov/tippecanoe:latest -o tippecanoe/tiles/<name of mbtiles>.mbtiles  -l default -Z10 -z22 -pk --drop-fraction-as-needed tippecanoe/geojson/<name of geojson>.geojson
+```
+
+For example:
+
+```
+docker run --entrypoint tippecanoe -v $PWD:/tippecanoe morlov/tippecanoe:latest -o tippecanoe/tiles/tejido_gcba.mbtiles  -l default -Z10 -z22 -pk --drop-fraction-as-needed tippecanoe/geojson/tejido.geojson
+```
+
+A Finish process to copy in folder of Tile Server. 
+
+
