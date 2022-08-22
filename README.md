@@ -29,3 +29,7 @@ docker run --entrypoint tippecanoe -v $PWD:/tippecanoe morlov/tippecanoe:latest 
 
 
 docker run --entrypoint tippecanoe -v $PWD:/tippecanoe morlov/tippecanoe:latest -o tippecanoe/tiles/construccion.mbtiles  -l default -Z10 -z22 -pk --drop-fraction-as-needed tippecanoe/geojson/4326_construccion.geojson
+
+
+
+wget https://cdn.buenosaires.gob.ar/datosabiertos/datasets/secretaria-de-desarrollo-urbano/tejido-urbano/tejido.geojson
