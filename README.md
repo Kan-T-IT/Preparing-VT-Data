@@ -16,6 +16,9 @@ The following structure needs to be created
 
 ```
 mkdir geojson
+```
+
+```
 mkdir tiles
 ```
 
@@ -25,9 +28,20 @@ Upload / download of GEOjson files, for example:
 
 ```
 cd geojson
+```
 
+(linux)
+```
 wget https://cdn.buenosaires.gob.ar/datosabiertos/datasets/secretaria-de-desarrollo-urbano/tejido-urbano/tejido.geojson
+```
 
+(mac)
+```
+curl https://cdn.buenosaires.gob.ar/datosabiertos/datasets/secretaria-de-desarrollo-urbano/tejido-urbano/tejido.geojson -o tejido.geojson
+```
+
+
+```
 cd ..
 ```
 
@@ -45,5 +59,3 @@ docker run --entrypoint tippecanoe -v $PWD:/tippecanoe morlov/tippecanoe:latest 
 ```
 
 To finish the process: copy the .mbtile files inside the Tile Server data folder.
-
-
